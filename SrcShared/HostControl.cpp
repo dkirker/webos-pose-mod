@@ -1129,7 +1129,7 @@ static void _HostFPrintF (void)
 
 	// Write everything out to the file using vfprintf.
 
-	int 	result = x_vfprintf (fh, fmt, (va_list) &stackData[0]);
+	int 	result = x_vfprintf (fh, fmt, reinterpret_cast<va_list>(&stackData[0]));
 
 	// Return the result.
 
